@@ -16,23 +16,27 @@
     <h2>LOGIN</h2>
     <form>
      <div>
-      <input type="text" name="" class="inputbox" placeholder="Username">
+      <input type="text" name="user" id="user" class="inputbox" placeholder="Username">
      </div>
      <br>
      <div>
-      <input type="Password" name="" class="inputbox" placeholder="Password">
+      <input type="Password" name="pass" id="pass" class="inputbox" placeholder="Password">
      </div>
      <br>
      <div>
-      <input type="text" name="" class="inputbox" placeholder="URL Service" value="https://vrprojectams.herokuapp.com/api/login">
+      <input type="text" name="URL" id="URL" class="inputbox" placeholder="URL Service" value="https://vrprojectams.herokuapp.com">
      </div>
      <br>
      <div>
-      <button type="submit">LOGIN</button>
+      <button type="submit" name="loginButton" id="loginButton">LOGIN</button>
      </div>
     </form> <br>
    </div>
   </div>
-  
+  <script src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
+        
+        <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
+        <script src="js/index.js"></script>
  </body>
 </html>
