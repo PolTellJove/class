@@ -5,23 +5,23 @@
     //$('.parallax').parallax();
     $('.tabs').tabs({"swipeable":true});
 
-    $('.download').click( function() {
-      //alert("hola!");
-      $('#llista_principal').empty();
-
-      $.ajax({
+    $.ajax({
         method: "GET",
-        url: "https://api.spaceflightnewsapi.net/v3/articles?_limit=3",
-        dataType: "json",   // necessitem això pq ens retorni un objecte JSON
-      }).done(function (msg) {
-        for(let item in msg) {
-          console.log(msg[item]);
-          // aquí caldría fer mes coses, of course...
-          // ...
-        };
-      }).fail(function () {
+        url: localStorage.getItem("URL")+"/api/get_courses",
+        data : {"session_token":localStorage.getItem("session_token")},
+        dataType: "json",
+    }).done(function (datos) {
+        alert("OK3");
+        console.log(localStorage.getItem("session_token"));
+        console.log(datos);
+        for (let item in datos) {
+            let cursos = datos[item]
+            for (let item2 in cursos) {
+                console.log(cursos[item2]["description"]);
+            }
+        }
+    }).fail(function () {
         alert("ERROR");
-      });
     });
 
   }); // end of document ready
