@@ -8,17 +8,17 @@
     $.ajax({
         method: "GET",
         url: localStorage.getItem("URL")+"/api/get_courses",
-        data : {"session_token":localStorage.getItem("session_token")},
+        data : {"token":localStorage.getItem("session_token")},
         dataType: "json",
-    }).done(function (datos) {
-        alert("OK3");
+    }).done(function (info) {
         console.log(localStorage.getItem("session_token"));
-        console.log(datos);
-        for (let item in datos) {
-            let cursos = datos[item]
-            for (let item2 in cursos) {
-                console.log(cursos[item2]["description"]);
-            }
+        console.log(info["course_list"]);
+        for (let item in info["course_list"]) {
+            let cursos = info["course_list"][item]
+            console.log(cursos);
+            console.log(cursos["title"]);
+            let newRow=$('<a href="#!" class="collection-item">'+cursos["title"]+'</a>')
+            $("#llista_principal").append(newRow);
         }
     }).fail(function () {
         alert("ERROR");

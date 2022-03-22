@@ -14,9 +14,7 @@ function onDeviceReady() {
     			localStorage.setItem("URL", $('#URL').val())
     			localStorage.setItem("session_token", info["session_token"]);
 
-                alert("OK");
                 window.location.assign('courses.html');
-                alert("OK2");
 
     		} else if (info["status"] != "OK"){
     			alert(info["message"])
