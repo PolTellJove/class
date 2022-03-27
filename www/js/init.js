@@ -15,9 +15,6 @@
         for (let item in info["course_list"]) {
             let cursos = info["course_list"][item]
             arrayCursos.push(cursos["_id"])
-            console.log(arrayCursos);
-            console.log(cursos);
-            console.log(cursos["title"]);
             let newRow=$('<a href="#!" class="collection-item">'+cursos["title"]+'</a>')
 
             newRow.click( function() {
@@ -30,28 +27,26 @@
                   //Vaciando el div de la pagina 2
                   $('#test-swipe-2').empty();
                   //Creacion de objetos graficos
-                  let newh1 = $("<h1>"+cursos["title"]+"</h1><br><br>");
-                  console.log(newh1);
+                  let newh1 = $("<h3>"+cursos["title"]+"</h3>");
                   $('#test-swipe-2').append(newh1);
-                  let newh2 = $("<h3>ELEMENTS</h3><br>");
-                  console.log(newh2);
+                  let newh2 = $("<h5>Elements</h5>");
                   $('#test-swipe-2').append(newh2);
                   //for (let item in arrayCursos) {
-                  for (let item in info["elements"]) {
-                    let newsummary = $("<p>"+item["title"]+"</p>");
+                  for (let item in info["course"]["elements"]) {
+                    let newsummary = $("<p>"+info["course"]["elements"][item]["title"]+"</p>");
                     $('#test-swipe-2').append(newsummary);
                   }
-                  let newh3 = $("<h3>VR TASKS</h3><br>");
+                  let newh3 = $("<h5>VR Tasks</h5>");
                   $('#test-swipe-2').append(newh3);
-                  for (let item in info["tasks"]) {
-                    let newsummary = $("<p>"+item["title"]+"</p>");
-                    $('#test-swipe-2').append(newsummary);
+                  for (let item in info["course"]["vr_tasks"]) {
+                    let newsummary2 = $("<p>"+info["course"]["vr_tasks"][item]["title"]+"</p>");
+                    $('#test-swipe-2').append(newsummary2);
                   }
-                  let newh4 = $("<h3>NO-VR TASKS</h3><br>");
+                  let newh4 = $("<h5>No-VR Tasks</h5>");
                   $('#test-swipe-2').append(newh4)
-                  for (let item in info["vr_tasks"]) {
-                    let newsummary = $("<p>"+item["title"]+"</p>");
-                    $('#test-swipe-2').append(newsummary);
+                  for (let item in info["course"]["tasks"]) {
+                    let newsummary3 = $("<p>"+info["course"]["tasks"][item]["title"]+"</p>");
+                    $('#test-swipe-2').append(newsummary3);
                   }  
                   //}
                   //Saltamos a la pagina 2
