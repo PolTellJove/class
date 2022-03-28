@@ -16,7 +16,7 @@ p {
 }
 
 .sidenav-trigger {
-  color: #26a69a;
+  color: white;
 }
 
 .parallax-container {
@@ -63,6 +63,15 @@ html, body {
   display: flex;
   justify-content: space-between;
   flex-flow: column;
+  background: white;
+}
+
+#tabs-swipe-demo {
+  background: #c6e2ff;
+}
+
+#coursesNav {
+  background: rgba(142,198,255,1);
 }
  
 .tabs-content {
