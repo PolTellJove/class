@@ -70,10 +70,54 @@ html, body {
   background: #c6e2ff;
 }
 
+#tab1 {
+  color: black;
+  font-weight: 500;
+}
+
+#tab2 {
+  color: black;
+  font-weight: 500;
+}
+
 #coursesNav {
-  background: rgba(142,198,255,1);
+  background: #6fb6ff;
 }
  
 .tabs-content {
   height: 100%;
+}
+
+.collection-item {
+  background: rgba(142,198,255,1) !important;
+  color: white !important;
+  margin: 5% 5% !important;
+  border-radius: 60px;
+}
+
+.details_head {
+  background: rgba(142,198,255,1);
+  color: white;
+  margin: 5% 5%;
+  padding-left: 3%;
+  padding-bottom: 1%;
+  border-radius: 60px;
+}
+
+.details_titles {
+  background: #c6e2ff;
+  margin: 2% 5%;
+  padding-left: 3%;
+  padding-bottom: 0.75%;
+  border-radius: 60px;
+}
+
+.details_elements {
+  margin: 0 5%;
+  padding-left: 3%;
+  padding-bottom: 0.5%;
+}
+
+.collection {
+  border: 0px;
 }
