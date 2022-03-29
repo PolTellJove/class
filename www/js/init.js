@@ -40,7 +40,23 @@
                   $('#test-swipe-2').append(newh3);
                   for (let item in info["course"]["vr_tasks"]) {
                     let newsummary2 = $("<p class='details_elements'>"+info["course"]["vr_tasks"][item]["title"]+"</p>");
+
+                    newsummary2.click( function() {
+                        $.ajax({
+                          method: "GET",
+                          url: localStorage.getItem("URL")+"/api/pin_request",
+                          data : {"token":localStorage.getItem("session_token"), "taskID":info["course"]["vr_tasks"][item]["ID"]},
+                          dataType: "json",
+                        }).done(function (info) {
+                          $("#alertPIN").text(info["PIN"]);
+                          $('#modal1').modal();
+                            $('#modal1').modal('open');
+                        }).fail(function() {
+                          alert("ERROR");
+                        });
+                    });
                     $('#test-swipe-2').append(newsummary2);
+
                   }
                   let newh4 = $("<h5 class='details_titles'>No-VR Tasks</h5>");
                   $('#test-swipe-2').append(newh4)
@@ -51,6 +67,8 @@
                   //}
                   //Saltamos a la pagina 2
                   $('.tabs').tabs("select", "test-swipe-2");
+                }).fail(function() {
+                  alert("ERROR");
                 });
 
             });
